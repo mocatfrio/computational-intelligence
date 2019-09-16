@@ -4,5 +4,4 @@
 > 05111950010040
 
 ## Assignment
-* **Assignment 1** : [Classification and Clustering using Weka and Python](/assignment-1)
-* 
+* **Assignment 1** : [Classification and Clustering using Weka](/assignment-1)
