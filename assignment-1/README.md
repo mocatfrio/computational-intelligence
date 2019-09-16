@@ -15,10 +15,14 @@
 
 ## Dataset Description
 * Title : 
+    
     **Forest Covertype data**
+
 * Description : 
+  
     **Forest Cover Type (FC) data** contains **tree observations** from four wilderness areas located in the Roosevelt National Forest of northern Colorado. All observations are cartographic variables (no remote sensing) from 30 meter x 30 meter sections of forest. This dataset includes information on tree type, shadow coverage, distance to nearby landmarks (roads etcetera), soil type, and local topography.
     This dataset is part of the **UCI Machine Learning Repository** ([here](https://archive.ics.uci.edu/ml/datasets/covertype)), but covertype dataset that I use comes from **Kaggle** that can be found [here](https://www.kaggle.com/uciml/forest-cover-type-dataset/). The original database owners are Jock A. Blackard, Dr. Denis J. Dean, and Dr. Charles W. Anderson of the Remote Sensing and GIS Program at Colorado State University.
+
 * Details :
 
     <table style="width:100%">
@@ -69,6 +73,7 @@
     | Cover_Type | 1 |
 
 * Data preparation :
+  
     Weka Explorer just open data with **.arff** extension (it's like usual .csv file with header information). So, first, we have to convert **covertype.csv** into **covertype.arff** using **ArffViewer**. It can be found in the Weka's main menu > Tools > ArffViewer. 
  
 ## Report
