@@ -21,6 +21,7 @@
 * Description : 
   
     **Forest Cover Type (FC) data** contains **tree observations** from four wilderness areas located in the Roosevelt National Forest of northern Colorado. All observations are cartographic variables (no remote sensing) from 30 meter x 30 meter sections of forest. This dataset includes information on tree type, shadow coverage, distance to nearby landmarks (roads etcetera), soil type, and local topography.
+
     This dataset is part of the **UCI Machine Learning Repository** ([here](https://archive.ics.uci.edu/ml/datasets/covertype)), but covertype dataset that I use comes from **Kaggle** that can be found [here](https://www.kaggle.com/uciml/forest-cover-type-dataset/). The original database owners are Jock A. Blackard, Dr. Denis J. Dean, and Dr. Charles W. Anderson of the Remote Sensing and GIS Program at Colorado State University.
 
 * Details :
@@ -74,23 +75,43 @@
 
 * Data preparation :
   
-    Weka Explorer just open data with **.arff** extension (it's like usual .csv file with header information). So, first, we have to convert **covertype.csv** into **covertype.arff** using **ArffViewer**. It can be found in the Weka's main menu > Tools > ArffViewer. 
+   1. Weka Explorer just open data with **.arff** extension (it's like usual .csv file with header information). So, first, we have to convert **covertype.csv** into **covertype.arff** using **ArffViewer**. It can be found in the Weka's main menu > Tools > ArffViewer. Open the .csv file and save as .arff file.
+   2. There are **too much data** that cause some processes in Weka to get stuck. So, I reduce the number of data become **100000 rows**. (source: [here](https://stackoverflow.com/questions/50820926/weka-j48-gets-stuck-on-building-model-on-training-data) | data reduction process: [here](cut-covertype.ipynb))
  
 ## Report
-### Preparation 
+### Preprocess 
 1. Open the dataset with **.arff** extension in the Weka
    
-   ![](img/dataset-1.png)
+   ![](img/dataset.png)
 
-2. 
+2. Some algorithms must use data with **Nominal** type. So, we must preprocess the data first by using filter **NumericToNominal**.
 
-## Classification 
-### 1. Naive Bayes
+    ![](img/preprocess-numeric-to-nominal.png)
 
+3. Click **Visualize all** to visualize all attributes.
+   
+   ![](img/visualize-1.png)
+   
+   ![](img/visualize-2.png)
+   
+### Classification - Naive Bayes
+1. Click **Classify** tab.
+2. Click **Choose** button and select **NaiveBayes** under the **bayes** group.
+   
+   ![](img/naive-bayes.png)
 
-### 2. K-Nearest Neighbor (KNN)
-### 3. Support Vector Machine (SVM)
+3. Click the **Start** button to run the algorithm on the Covertype dataset.
+4. Here's the result
+   
+   ![](img/naive-bayes-result-1.png)
 
-## Clustering 
-### 4. K-Means
+   ![](img/naive-bayes-result-2.png)
+
+You can see that with the default configuration that Naive Bayes achieves an accuracy of **77%**.
+
+### Classification - K-Nearest Neighbor (KNN)
+
+### Classification - Support Vector Machine (SVM)
+
+## Clustering - K-Means
 
