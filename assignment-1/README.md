@@ -107,11 +107,27 @@
 
    ![](img/naive-bayes-result-2.png)
 
-You can see that with the default configuration that Naive Bayes achieves an accuracy of **77%**.
+    You can see that with the default configuration that Naive Bayes achieves an accuracy of **77%**.
 
 ### Classification - K-Nearest Neighbor (KNN)
 
+1. Still in the **Classify** tab.
+2. Click the **Choose** button and select **IBk** under the **lazy** group.
+
+   ![](img/knn.png)
+
+   ![](img/nn.png)
+
+3. Click the **Start** button to run the algorithm on the Covertype dataset.
+4. Here's the result
+
+   ![](img/knn-result-1.png)
+
+   ![](img/knn-result-2.png)
+
+    You can see that with the default configuration that Naive Bayes achieves an accuracy of **69%**.
+
 ### Classification - Support Vector Machine (SVM)
 
-## Clustering - K-Means
+### Clustering - K-Means
 
