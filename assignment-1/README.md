@@ -1,6 +1,9 @@
 ### Assignment 1
 # Classification and Clustering using Weka Explorer
 
+> Hafara Firdausi
+> 05111950010040
+
 ## Description
 * Find dataset in UCI machine learning, Kaggle, etc, to be processed.
 * Do **classification** using the following methods (supervised learning):
