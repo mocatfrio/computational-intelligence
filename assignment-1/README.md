@@ -76,7 +76,10 @@
 * Data preparation :
   
    1. Weka Explorer just open data with **.arff** extension (it's like usual .csv file with header information). So, first, we have to convert **covertype.csv** into **covertype.arff** using **ArffViewer**. It can be found in the Weka's main menu > Tools > ArffViewer. Open the .csv file and save as .arff file.
-   2. There are **too much data** that cause some processes in Weka to get stuck. So, I reduce the number of data become **100000 rows**. (source: [here](https://stackoverflow.com/questions/50820926/weka-j48-gets-stuck-on-building-model-on-training-data) | data reduction process: [here](cut-covertype.ipynb))
+
+    ![](img/arffviewer.png)
+
+   2. There are **too much data** that cause some processes in Weka to get stuck. So, I reduce the number of data become **100000 rows**. (source: [here](https://stackoverflow.com/questions/50820926/weka-j48-gets-stuck-on-building-model-on-training-data) | data reduction process: [here](reduce-covertype.ipynb))
  
 ## Report
 ### Preprocess 
@@ -125,9 +128,32 @@
 
    ![](img/knn-result-2.png)
 
-    You can see that with the default configuration that Naive Bayes achieves an accuracy of **69%**.
+    You can see that with the default configuration that KNN achieves an accuracy of **69%**.
 
 ### Classification - Support Vector Machine (SVM)
 
+1. Still in the **Classify** tab.
+2. Click the **Choose** button and select **SMO** under the **function** group.
+
+   ![](img/svm.png)
+
+3. Click the **Start** button to run the algorithm on the Covertype dataset.
+4. Here's the result
+
+   ![](img/svm-error.png)
+
+   It still error because out of memory.
+
 ### Clustering - K-Means
+
+1. Click **Cluster** tab.
+2. Click the Clusterer “Choose” button and select .
+3. Click the **Choose** button and select **SimpleKMeans** under the **clusterers** group.
+
+   ![](img/kmeans.png)
+
+4. Click the **Start** button to run the algorithm on the Covertype dataset.
+5. Here's the result
+
+   ![](img/kmeans-result.png)
 
