@@ -228,6 +228,11 @@
 
    It still error because out of memory.
 
+   So, I reduce the data become **100 rows** and here's the result.
+
+   ![](img/svm-result.png)
+
+
 ### Clustering - K-Means
 
 1. Click **Cluster** tab.
