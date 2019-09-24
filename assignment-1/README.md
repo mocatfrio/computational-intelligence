@@ -247,7 +247,7 @@ Based on the result above, **origin dataset has better accuracy** than reduced d
 3. Click the **Start** button to run the algorithm on the Covertype dataset.
 4. Here's the result.
    
-   ![](img/svm-result.png)
+   ![](img/svm-res.png)
 
 ### 7. Clustering - K-Means
 
