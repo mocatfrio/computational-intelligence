@@ -1,4 +1,4 @@
-### Assignment 1
+###signment 1
 # Classification and Clustering using Weka Explorer
 
 > Hafara Firdausi
@@ -86,7 +86,7 @@
   7. Krummholz
 
 ## Report
-### 1. Data preparation
+### Data preparation
   
 1. Convert dataset file **covertype.csv** into **covertype.arff** using **ArffViewer** (it can be found in the Weka's main menu > Tools > ArffViewer) because Weka Explorer just open data with **.arff** extension (it's like usual .csv file with header information). 
 
@@ -154,7 +154,7 @@
     @attribute Cover_Type numeric
     ```
 
-### 2. Data Preprocessing 
+### Data Preprocessing 
 1. Open the dataset with **.arff** extension in the Weka.
    
    ![](img/open-file.png)
@@ -169,7 +169,7 @@
    
    ![](img/visualize2.png)
 
-### 3. Select Attributes
+### Select Attributes
 
 1. Use default attribute evaluator (**CfsSubsetEval**) and search method (**BestFirst**).
 2. Here's the selected attributes.
@@ -180,7 +180,7 @@
    
    ![](img/visualize-reduced.png)
 
-### 4. Classification - Naive Bayes
+### Classification - Naive Bayes
 1. Click **Classify** tab.
 2. Click **Choose** button and select **NaiveBayes** under the **bayes** group.
    
@@ -198,7 +198,7 @@
 
 Based on the result above, **origin dataset has better accuracy** than reduced dataset after attribute selection. 
 
-### 5. Classification - K-Nearest Neighbor (KNN)
+### Classification - K-Nearest Neighbor (KNN)
 
 1. Still in the **Classify** tab.
 2. Click the **Choose** button and select **IBk** under the **lazy** group.
@@ -237,7 +237,7 @@ Based on the result above, **origin dataset has better accuracy** than reduced d
 
     Based on the result above, **the greater k used, the better accuracy result obtained**.    
 
-### 6. Classification - Support Vector Machine (SVM)
+### Classification - Support Vector Machine (SVM)
 
 1. Still in the **Classify** tab.
 2. Click the **Choose** button and select **SMO** under the **function** group.
@@ -249,7 +249,7 @@ Based on the result above, **origin dataset has better accuracy** than reduced d
    
    ![](img/svm-res.png)
 
-### 7. Clustering - K-Means
+### Clustering - K-Means
 
 1. Click **Cluster** tab.
 2. Click the Clusterer “Choose” button and select .
