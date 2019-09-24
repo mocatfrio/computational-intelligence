@@ -1,4 +1,4 @@
-###signment 1
+### Assignment 1
 # Classification and Clustering using Weka Explorer
 
 > Hafara Firdausi
@@ -86,7 +86,7 @@
   7. Krummholz
 
 ## Report
-### Data preparation
+### Data Preparation
   
 1. Convert dataset file **covertype.csv** into **covertype.arff** using **ArffViewer** (it can be found in the Weka's main menu > Tools > ArffViewer) because Weka Explorer just open data with **.arff** extension (it's like usual .csv file with header information). 
 
