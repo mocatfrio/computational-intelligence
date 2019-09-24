@@ -23,9 +23,9 @@
 
 * Description : 
   
-    **Forest Cover Type (FC) data** contains **tree observations** from four wilderness areas located in the Roosevelt National Forest of northern Colorado. All observations are cartographic variables (no remote sensing) from 30 meter x 30 meter sections of forest. This dataset includes information on tree type, shadow coverage, distance to nearby landmarks (roads etcetera), soil type, and local topography.
+    **Forest Cover Type (FC) data** contains **tree observations** from four wilderness areas located in the **Roosevelt National Forest of northern Colorado**. All observations are cartographic variables (no remote sensing) from 30 meter x 30 meter sections of forest. This dataset includes information on tree type, shadow coverage, distance to nearby landmarks (roads etcetera), soil type, and local topography.
 
-    This dataset is part of the **UCI Machine Learning Repository** ([here](https://archive.ics.uci.edu/ml/datasets/covertype)), but covertype dataset that I use comes from **Kaggle** that can be found [here](https://www.kaggle.com/uciml/forest-cover-type-dataset/). The original database owners are Jock A. Blackard, Dr. Denis J. Dean, and Dr. Charles W. Anderson of the Remote Sensing and GIS Program at Colorado State University.
+    This dataset is part of the **UCI Machine Learning Repository** ([here](https://archive.ics.uci.edu/ml/datasets/covertype)), but covertype dataset that I use comes from **Kaggle** that can be found [here](https://www.kaggle.com/uciml/forest-cover-type-dataset/). The original database owners are **Jock A. Blackard, Dr. Denis J. Dean, and Dr. Charles W. Anderson** of the Remote Sensing and GIS Program at Colorado State University.
 
 * Details :
 
@@ -76,24 +76,25 @@
     | Soil_Type | 40 | 
     | Cover_Type | 1 |
 
-    Covertype :
-    1. Spruce/Fir
-    2. Lodgepole Pine
-    3. Ponderosa Pine
-    4. Cottonwood/Willow
-    5. Aspen
-    6. Douglas-fir
-    7. Krummholz
+* There are 7 classes (covertype) here, that is:
+  1. Spruce/Fir
+  2. Lodgepole Pine
+  3. Ponderosa Pine
+  4. Cottonwood/Willow
+  5. Aspen
+  6. Douglas-fir
+  7. Krummholz
 
-* Data preparation :
+## Report
+### 1. Data preparation
   
-   1. Weka Explorer just open data with **.arff** extension (it's like usual .csv file with header information). So, first, we have to convert **covertype.csv** into **covertype.arff** using **ArffViewer**. It can be found in the Weka's main menu > Tools > ArffViewer. Open the .csv file and save as .arff file.
+1. Convert dataset file **covertype.csv** into **covertype.arff** using **ArffViewer** (it can be found in the Weka's main menu > Tools > ArffViewer) because Weka Explorer just open data with **.arff** extension (it's like usual .csv file with header information). 
 
     ![](img/arffviewer.png)
 
-   2. There are **too much data** that cause some processes in Weka to get stuck. So, I reduce the number of data become **100000 rows**. (source: [here](https://stackoverflow.com/questions/50820926/weka-j48-gets-stuck-on-building-model-on-training-data) | data reduction process: [here](reduce-covertype.ipynb))
+2. Reduce the number of data become **10000 rows** as a sample because **too much data** cause some processes in Weka to get stuck (source: [here](https://stackoverflow.com/questions/50820926/weka-j48-gets-stuck-on-building-model-on-training-data) | data reduction process: [here](reduce-covertype.ipynb)).
 
-* Here's the **arff** file
+* Here's the **arff** file.
   
     ```arff
     @attribute Elevation numeric
@@ -152,47 +153,52 @@
     @attribute Soil_Type40 numeric
     @attribute Cover_Type numeric
     ```
- 
-## Report
-### Preprocess 
-1. Open the dataset with **.arff** extension in the Weka
+
+### 2. Data Preprocessing 
+1. Open the dataset with **.arff** extension in the Weka.
    
-   ![](img/dataset.png)
+   ![](img/open-file.png)
 
 2. Some algorithms must use data with **Nominal** type. So, we must preprocess the data first by using filter **NumericToNominal**.
 
-    ![](img/preprocess-numeric-to-nominal.png)
+    ![](img/preprocess-nominal.png)
 
 3. Click **Visualize all** to visualize all attributes.
    
-   ![](img/visualize-1.png)
+   ![](img/visualize1.png)
    
-   ![](img/visualize-2.png)
+   ![](img/visualize2.png)
 
-### Select Attributes
+### 3. Select Attributes
 
-1. Using default attribute evaluator (**CfsSubsetEval**) and search method (**BestFirst**)
+1. Use default attribute evaluator (**CfsSubsetEval**) and search method (**BestFirst**).
 2. Here's the selected attributes.
    
    ![](img/select-attr.png)
 
-3. Visualize attributes
-   ![](img/visualize-after.png)
+3. Visualize attributes.
+   
+   ![](img/visualize-reduced.png)
 
-### Classification - Naive Bayes
+### 4. Classification - Naive Bayes
 1. Click **Classify** tab.
 2. Click **Choose** button and select **NaiveBayes** under the **bayes** group.
    
    ![](img/naive-bayes.png)
 
 3. Click the **Start** button to run the algorithm on the Covertype dataset.
-4. Here's the result
-   
-   ![](img/naive-bayes-result-1.png)
+4. Here's the result.
+   * Origin Dataset
+  
+        ![](img/naive-bayes-res.png)
 
-   ![](img/naive-bayes-result-2.png)
+   * After Attributes Selection
+  
+        ![](img/naive-bayes-reduced-res.png)
 
-### Classification - K-Nearest Neighbor (KNN)
+Based on the result above, **origin dataset has better accuracy** than reduced dataset after attribute selection. 
+
+### 5. Classification - K-Nearest Neighbor (KNN)
 
 1. Still in the **Classify** tab.
 2. Click the **Choose** button and select **IBk** under the **lazy** group.
@@ -202,19 +208,36 @@
    ![](img/nn.png)
 
 3. Click the **Start** button to run the algorithm on the Covertype dataset.
-4. Here's the result
-    * k = 1
-        ![](img/knn-result-11.png)
+4. Here's the result using `k = 1`
+   * Origin Dataset
 
-        ![](img/knn-result-12.png)
+        ![](img/knn-res-1.png)
 
-    * k = 3
+   * After Attributes Selection
 
-        ![](img/knn-result-3.png)
+        ![](img/knn-reduced-res-1.png)
 
+    Based on the result above, **origin dataset still has better accuracy** than reduced dataset after attribute selection. So, the reduced dataset will not be used for tests anymore.
 
+   * k = 3
 
-### Classification - Support Vector Machine (SVM)
+        ![](img/knn-res-3.png)
+
+   * k = 5
+
+        ![](img/knn-res-5.png)
+
+   * k = 7
+
+        ![](img/knn-res-7.png)
+
+   * k = 10
+
+        ![](img/knn-res-10.png)
+
+    Based on the result above, **the greater k used, the better accuracy result obtained**.    
+
+### 6. Classification - Support Vector Machine (SVM)
 
 1. Still in the **Classify** tab.
 2. Click the **Choose** button and select **SMO** under the **function** group.
@@ -222,18 +245,11 @@
    ![](img/svm.png)
 
 3. Click the **Start** button to run the algorithm on the Covertype dataset.
-4. Here's the result
-
-   ![](img/svm-error.png)
-
-   It still error because out of memory.
-
-   So, I reduce the data become **100 rows** and here's the result.
-
+4. Here's the result.
+   
    ![](img/svm-result.png)
 
-
-### Clustering - K-Means
+### 7. Clustering - K-Means
 
 1. Click **Cluster** tab.
 2. Click the Clusterer “Choose” button and select .
@@ -242,13 +258,24 @@
    ![](img/kmeans.png)
 
 4. Click the **Start** button to run the algorithm on the Covertype dataset.
-5. Here's the result
-    * k = 1
-  
-        ![](img/kmeans-result-3.png)
+5. Here's the result using `k = 7` because there are 7 classes in this dataset.
+   * Origin Dataset
 
-    * k = 7
+        ![](img/kmeans-res.png)
 
-        ![](img/kmeans-result-7.png)
+   * After Attributes Selection
 
-  
+        ![](img/kmeans-reduced-res.png)
+
+## Conclusion
+
+The best classification method for this dataset in this experiment is **K-Nearest Neighbour** with `k = 10` because it has the highest accuracy result. However if it's using `k = 1` it will get worse accuracy than **Naive Bayes**. The classification method that got the worst accuracy results is **SVM**, so this method is not suitable to classify this dataset.
+
+In fact, this data processing is still bad, because the range of values for each feature in this dataset is too different. So, I think this data must be normalized first.
+
+![](img/data.png)
+
+
+## References
+* https://archive.ics.uci.edu/ml/datasets/covertype
+* https://www.kaggle.com/uciml/forest-cover-type-dataset/
