@@ -37,7 +37,7 @@ This program implemented in the system described below:
 
 ## Steps
 
-* [LSTM Forecasting](lstm-forecasting.ipynb)
+* [Load and Prepare Dataset](load-and-prepare-dataset.ipynb)
 
 
 ## References
