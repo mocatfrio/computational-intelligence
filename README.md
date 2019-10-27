@@ -1,7 +1,2 @@
-# Computational Intelligence 2019
-
-> Hafara Firdausi
-> 05111950010040
-
-## Assignment
-* **Assignment 1** : [Classification and Clustering using Weka](/assignment-1)
+# Computational Intelligence 
+A documentation of computational intelligence course 
